@@ -49,7 +49,7 @@ export default function Home() {
   }
 
   return (
-    <main className={styles.main} style={{ backgroundColor: "#3d251e" }}>
+    <main className={styles.main} style={{ backgroundColor: "#3d251e" }}>   //className={styles.main}
       <div className='container'>
         <div className='row mb-5'>
           <div className='col-md-6 col-12 mx-auto'>

@@ -9,17 +9,20 @@ export const todoslice = createSlice({
     reducers:{
         addTodos(state,action){
             state.todo.push(action.payload)
+        },
+        updateTodo(state,action){
+            state.todo = state.todo.map((task,i) => {
+                if(i === action.payload){
+                    task.isCompleted = true;
+                }
+                return task;
+            })
+        },
+        removeTodo(state,action){
+            state.todo = state.todo.filter((task,i) => i !== action.payload);
         }
-        // updateTodo(state,action){
-        //     state.todos = state.todos.map((task) => task.id === action.payload.id?action.payload:todos)
-        // },
-        // removeTodos(state,action){
-        //     state.todos = state.todos.filter((task) => task.id !== action.payload.id)
-        // }
 
     }
 }) 
 
-export const {addTodos} = todoslice.actions;
-
-export default todoslice.reducer;
+export const {addTodos,updateTodo,removeTodo} = todoslice.actions;
