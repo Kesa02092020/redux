@@ -23,7 +23,7 @@ export default function Home() {
 
   const onsubmit = (e) => {
     e.preventDefault();
-    //if (formdata.title !== "" && formdata.description !== "") {
+    if (formdata.title !== "" && formdata.description !== "") {
       try {
         const item = {
           ...formdata,
@@ -36,10 +36,10 @@ export default function Home() {
       catch (err) {
         console.log("error", err.message);
       }
-    // }
-    // else {
-    //   toast.error("Fill the task");
-    // }
+     }
+    else {
+       toast.error("Fill the task");
+     }
 
 
     setFormdata({

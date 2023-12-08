@@ -14,7 +14,7 @@ const Todo = ({data,index}) =>{
         updatedispatch(removeTodo(index))  
         toast.success("Deleted Success")      
     } 
-    console.log(data);
+   // console.log(data);
     return(
 
         <tr>
@@ -47,9 +47,9 @@ const todos = () => {
                 </thead>
                 <tbody>                    
                     {itemselect && itemselect.length > 0? itemselect.map((task,i) => {
-                        console.log(task);
+                        //console.log(task);
                         return <Todo data={task} index={i} key={i} />
-                    }):<tr><td colspan="5" className='p-0 border fs-4 fw-bold text-center py-4'>No Task Founded</td></tr>}
+                    }):<tr><td colSpan="5" className='p-0 border fs-4 fw-bold text-center py-4'>No Task Founded</td></tr>}
                 </tbody>
             </Table>
         </div>

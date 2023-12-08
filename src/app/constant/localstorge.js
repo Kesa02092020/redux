@@ -1,9 +1,13 @@
 "use client";
-
-export const getTodo = () =>{
-    return JSON.parse(localStorage.getItem("todos"));
+export const getTodo = () => {
+    if (typeof window !== 'undefined') {
+        return JSON.parse(localStorage.getItem("todo"));
+    }
 }
 
-export const saveTodo = () =>{
-    return JSON.parse(localStorage.setItem("todos",JSON.stringify(todos)));
+
+export const saveTodo = (todo) => {
+    console.log({todo:todo,msg:"set"});
+    localStorage.setItem("todo", JSON.stringify(todo));
+    return;
 }
